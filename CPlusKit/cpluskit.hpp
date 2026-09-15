@@ -119,14 +119,16 @@ namespace cpk
 
 }
 
-//digits function
+// digits function
 
-int* digits(int val) {
+int *digits(int val)
+{
 
-    int dgt,temp;
+    int dgt, temp;
     temp = val;
+
     int count = 0;
-    
+
     while (val != 0)
     {
         count++;
@@ -137,8 +139,6 @@ int* digits(int val) {
         dgt = temp % 10;
         arr[i] = dgt;
         temp /= 10;
-        
     }
     return arr;
-    
 }
