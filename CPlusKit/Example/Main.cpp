@@ -1,15 +1,13 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 #include "../cpluskit.hpp"
 using namespace cpk;
+using namespace cpk::math;
+using namespace std;
+int main()
+{
 
-int main() {
-    // int value = -5;
-    // std::cout << "Absolute value of " << value << " is: " << math::abs(value) << std::endl;
-    // std::cout << std::endl << cpk::factorial(5) << std::endl;
-    // std::cout << std::endl << cpk::IsPrime(6) << std::endl;
-    // std::cout << std::endl << cpk::digits(123) << std::endl;
-   
-    
+    //   cout << endl << cpk::math::productdigits(1234) << endl;
+    cout << endl << ReverseDigits(4567) << endl;
     return 0;
 }
