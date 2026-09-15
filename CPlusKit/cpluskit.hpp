@@ -46,7 +46,7 @@ namespace cpk
             }
             return val;
         }
-    }
+    
 
     // Minimum Function
     int min(int a, int b)
@@ -117,7 +117,7 @@ namespace cpk
         }
     }
 
-}
+
 
 // digits function
 
@@ -142,3 +142,17 @@ int *digits(int val)
     }
     return arr;
 }
+
+//sum of digits function
+int sumdigits(int val) {
+    int digit, sum = 0;
+    while(val != 0) {
+        digit = val % 10;
+        sum += digit;
+        val /= 10;
+    }
+    return sum;
+}
+
+        }
+    }

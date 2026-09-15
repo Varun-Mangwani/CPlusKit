@@ -8,7 +8,8 @@ int main() {
     // std::cout << "Absolute value of " << value << " is: " << math::abs(value) << std::endl;
     // std::cout << std::endl << cpk::factorial(5) << std::endl;
     // std::cout << std::endl << cpk::IsPrime(6) << std::endl;
-    
+    // std::cout << std::endl << cpk::digits(123) << std::endl;
+   
     
     return 0;
 }
