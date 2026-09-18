@@ -2,7 +2,8 @@
 #include<vector>
 #include<algorithm>
 using namespace std;
-
+#ifndef MATHS_HPP
+#define MATHS_HPP
 namespace cpk
 {
     namespace math
@@ -144,3 +145,4 @@ namespace cpk
 
     }
 }
+#endif
