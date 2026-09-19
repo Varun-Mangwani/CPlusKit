@@ -3,40 +3,12 @@
 #include <vector>
 #include "Maths.hpp"
 #include "string.hpp"
-// abs
-// min
-// max
-// clamp
-// sign
-
-// isEven
-// isOdd
-
-// gcd
-// lcm
-// factorial
-// isPrime
-
-// digits
-// sumDigits
-// productDigits
-// reverseNumber
-
-// isPalindrome
-// isArmstrong
-// isPerfectNumber
-// isStrongNumber
-
-// countDivisors
-// sumDivisors
-// getDivisors
-// getPrimeFactors
-
-// permutation
-// combination
 using namespace std;
 
-namespace cpk{
+// CPlusKit is a lightweight utility library for simple string and numeric operations.
+// It is designed for beginner-friendly use and provides common helpers for working
+// with C-style strings and basic mathematical calculations.
+namespace cpk {
 
 };
 

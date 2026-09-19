@@ -3,9 +3,14 @@ using namespace std;
 
 #ifndef CPlusKit_STRING_HPP
 #define CPlusKit_STRING_HPP
+
 namespace cpk::string
 {
-    // String / Character Array Length Function
+    /**
+     * @brief Returns the number of characters in a C-style string.
+     * @param str The null-terminated character array to measure.
+     * @return The length of the string before the null terminator.
+     */
     int strl(char str[])
     {
         int len = 0;
@@ -16,8 +21,11 @@ namespace cpk::string
         return len;
     }
 
-    // This Function Tells Wether String Is Empty Or Not
-    // Its Gonna Pass ("0" For Empty String) or ("Position" For String Position Till Characters)
+    /**
+     * @brief Checks whether the given string is empty.
+     * @param str The string to inspect.
+     * @return 0 if empty, otherwise the length of the string.
+     */
     int Is_Empty(char str[])
     {
         if (str[0] == '\0')
@@ -35,8 +43,11 @@ namespace cpk::string
         }
     }
 
-    // Is_Aplha Function: Is There Alphabets Only In String?
-    // If There Is Anything Other Than Alphabets, It Will Return 0, Otherwise 1
+    /**
+     * @brief Checks whether a string contains only alphabetic characters.
+     * @param str The string to validate.
+     * @return 1 if all characters are letters; otherwise 0.
+     */
     int Is_Alpha(char str[])
     {
         int len = strl(str);
@@ -57,8 +68,12 @@ namespace cpk::string
             return 0;
         }
     }
-    //Checks if the string contains only digits
-    // 1 For All Digits, 0 For Anything Else
+
+    /**
+     * @brief Checks whether a string contains only numeric digits.
+     * @param str The string to validate.
+     * @return 1 if all characters are digits; otherwise 0.
+     */
     int Is_Digit(char str[])
     {
         int len = strl(str);
@@ -80,7 +95,11 @@ namespace cpk::string
         }
     }
 
-    //Alphabets and Numerics Give 1 Anything Else Is 0
+    /**
+     * @brief Checks whether a string contains only letters and numbers.
+     * @param str The string to validate.
+     * @return 1 if the string is alphanumeric; otherwise 0.
+     */
     int Is_Alnum(char str[])
     {
         int len = strl(str);
@@ -101,5 +120,164 @@ namespace cpk::string
             return 0;
         }
     }
+
+    /**
+     * @brief Checks whether the string contains a space character.
+     * @param str The string to inspect.
+     * @return 1 if a space is found; otherwise 0.
+     */
+    int Is_Space(char str[]) {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] == ' ')
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * @brief Checks whether the string contains a lowercase letter.
+     * @param str The string to inspect.
+     * @return 1 if a lowercase character exists; otherwise 0.
+     */
+    int Is_Lower(char str[]) {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] >= 'a' && str[i] <= 'z')
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * @brief Checks whether the string contains an uppercase letter.
+     * @param str The string to inspect.
+     * @return 1 if an uppercase character exists; otherwise 0.
+     */
+    int Is_Upper(char str[]) {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] >= 'A' && str[i] <= 'Z')
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * @brief Converts all lowercase letters in the string to uppercase.
+     * @param str The string to modify in place.
+     * @return A pointer to the modified string.
+     */
+    char* To_Upper(char str[]) {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] >= 'a' && str[i] <= 'z')
+            {
+                str[i] = str[i] - 32;
+            }
+        }
+        return str;
+    }
+
+    /**
+     * @brief Converts all uppercase letters in the string to lowercase.
+     * @param str The string to modify in place.
+     * @return A pointer to the modified string.
+     */
+    char* To_Lower(char str[]) {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] >= 'A' && str[i] <= 'Z')
+            {
+                str[i] = str[i] + 32;
+            }
+        }
+        return str;
+    }
+
+    /**
+     * @brief Converts the first letter of the string and each word after a space to uppercase.
+     * @param str The string to transform into title case.
+     * @return A pointer to the converted string.
+     */
+    char * To_Title(char str[])
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            if (i == 0 && str[i] >= 'a' && str[i] <= 'z')
+            {
+                str[i] = str[i] - 32;
+            }
+            else if (str[i] == ' ' && str[i + 1] >= 'a' && str[i + 1] <= 'z')
+            {
+                str[i + 1] = str[i + 1] - 32;
+            }
+        }
+        return str;
+    }
+
+    /**
+     * @brief Removes leading spaces from the beginning of a string.
+     * @param str The string to trim from the left.
+     * @return A pointer to the trimmed string.
+     */
+    char * Ltrim(char str[])
+    {
+        int len = strl(str);
+        int start = 0;
+        while (str[start] == ' ')
+        {
+            start++;
+        }
+        for (int i = start; i < len; i++)
+        {
+            str[i - start] = str[i];
+        }
+        str[len - start] = '\0';
+        return str;
+    }
+
+    /**
+     * @brief Removes trailing spaces from the end of a string.
+     * @param str The string to trim from the right.
+     * @return A pointer to the trimmed string.
+     */
+    char * Rtrim(char str[])
+    {
+        int len = strl(str);
+        int end = len - 1;
+        while (str[end] == ' ')
+        {
+            end--;
+        }
+        str[end + 1] = '\0';
+        return str;
+    }
+
+    /**
+     * @brief Removes spaces from both the start and end of a string.
+     * @param str The string to clean.
+     * @return A pointer to the cleaned string.
+     */
+    char * Trim(char str[])
+    {
+        Ltrim(str);
+        Rtrim(str);
+        return str;
+    }
 }
+//--------------------------------------------------------
+// End Of CPlusKit String / Character Array Functions
 #endif

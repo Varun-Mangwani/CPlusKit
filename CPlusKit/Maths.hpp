@@ -7,7 +7,11 @@ using namespace std;
 
     namespace cpk::math
     {
-        // absolute value function
+        /**
+         * @brief Returns the absolute value of an integer.
+         * @param val The input number to evaluate.
+         * @return The positive magnitude of the value.
+         */
         int abs(int val)
         {
             if (val < 0)
@@ -17,19 +21,35 @@ using namespace std;
             return val;
         }
 
-        // Minimum Function
+        /**
+         * @brief Returns the smaller of two integers.
+         * @param a First integer.
+         * @param b Second integer.
+         * @return The minimum value between a and b.
+         */
         int min(int a, int b)
         {
             return (a > b) ? b : a;
         }
 
-        // Maximum Function
+        /**
+         * @brief Returns the larger of two integers.
+         * @param a First integer.
+         * @param b Second integer.
+         * @return The maximum value between a and b.
+         */
         int max(int a, int b)
         {
             return (a > b) ? a : b;
         }
 
-        // clamp function
+        /**
+         * @brief Restricts a value to a given range.
+         * @param val The value to clamp.
+         * @param minVal The lower limit.
+         * @param maxVal The upper limit.
+         * @return The value, limited to the range [minVal, maxVal].
+         */
         int clamp(int val, int minVal, int maxVal)
         {
             if (val < minVal)
@@ -39,19 +59,31 @@ using namespace std;
             return val;
         }
 
-        // IsEven
+        /**
+         * @brief Checks whether a number is even.
+         * @param val The value to inspect.
+         * @return 1 if the number is even; otherwise 0.
+         */
         int IsEven(int val)
         {
             return (val % 2 == 0);
         }
 
-        // IsOdd
+        /**
+         * @brief Checks whether a number is odd.
+         * @param val The value to inspect.
+         * @return 1 if the number is odd; otherwise 0.
+         */
         int IsOdd(int val)
         {
             return (val % 2 != 0);
         }
 
-        // Factorial Function
+        /**
+         * @brief Computes the factorial of a non-negative integer.
+         * @param val The number whose factorial should be calculated.
+         * @return The factorial of val.
+         */
         int factorial(int val)
         {
             int fact = 1;
@@ -62,7 +94,11 @@ using namespace std;
             return fact;
         }
 
-        // IsPrime Function
+        /**
+         * @brief Determines whether a number is prime.
+         * @param val The integer to test.
+         * @return 1 if the value is prime; otherwise 0.
+         */
         int IsPrime(int val)
         {
 
@@ -86,7 +122,11 @@ using namespace std;
             }
         }
 
-        // digits function
+        /**
+         * @brief Splits an integer into its decimal digits.
+         * @param val The number to decompose.
+         * @return A vector containing the digits in order.
+         */
         std::vector<int> digits(int val)
         {
             std::vector<int> result;
@@ -102,7 +142,11 @@ using namespace std;
             return result;
         }
 
-        // sum of digits function
+        /**
+         * @brief Sums all digits of a number.
+         * @param val The value to inspect.
+         * @return The sum of all digits.
+         */
         int sumdigits(int val)
         {
             int digit, sum = 0;
@@ -115,7 +159,11 @@ using namespace std;
             return sum;
         }
 
-        // product of digits function
+        /**
+         * @brief Multiplies all digits of a number together.
+         * @param val The value to inspect.
+         * @return The product of all digits.
+         */
         int productdigits(int val)
         {
             int digit, product = 1;
@@ -128,7 +176,11 @@ using namespace std;
             return product;
         }
 
-        // Returns Reverse Of Digits(Pass: Value)
+        /**
+         * @brief Reverses the digits of an integer.
+         * @param val The number to reverse.
+         * @return The number with digits in reverse order.
+         */
         int ReverseDigits(int val)
         {
             int dgt, rev = 0;
