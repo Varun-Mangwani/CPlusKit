@@ -57,5 +57,49 @@ namespace cpk::string
             return 0;
         }
     }
+    //Checks if the string contains only digits
+    // 1 For All Digits, 0 For Anything Else
+    int Is_Digit(char str[])
+    {
+        int len = strl(str);
+        int count = 0;
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] >= '0' && str[i] <= '9')
+            {
+                count++;
+            }
+        }
+        if(count == len)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    //Alphabets and Numerics Give 1 Anything Else Is 0
+    int Is_Alnum(char str[])
+    {
+        int len = strl(str);
+        int count = 0;
+        for (int i = 0; i < len; i++)
+        {
+            if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z') || (str[i] >= '0' && str[i] <= '9'))
+            {
+                count++;
+            }
+        }
+        if(count == len)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
 }
 #endif
