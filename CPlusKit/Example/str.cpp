@@ -1,7 +1,7 @@
-#include<iostream>
+#include <iostream>
 #include "../cpluskit.hpp"
-int main() {
-    char nm[50] = "varun";
-    cout << strl(nm) << endl;
-
+int main()
+{
+    char nm[50] = "blah";
+    cout << cpk::string::Is_Alpha(nm) << endl;
 }

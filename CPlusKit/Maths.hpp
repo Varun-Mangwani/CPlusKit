@@ -2,8 +2,8 @@
 #include<vector>
 #include<algorithm>
 using namespace std;
-#ifndef MATHS_HPP
-#define MATHS_HPP
+#ifndef CPlusKit_MATHS_HPP
+#define CPlusKit_MATHS_HPP
 
     namespace cpk::math
     {
