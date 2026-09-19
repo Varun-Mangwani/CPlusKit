@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "Maths.hpp"
+#include "string.hpp"
 // abs
 // min
 // max
@@ -34,4 +35,8 @@
 // permutation
 // combination
 using namespace std;
+
+namespace cpk{
+
+};
 

@@ -4,9 +4,8 @@
 using namespace std;
 #ifndef MATHS_HPP
 #define MATHS_HPP
-namespace cpk
-{
-    namespace math
+
+    namespace cpk::math
     {
         // absolute value function
         int abs(int val)
@@ -88,7 +87,6 @@ namespace cpk
         }
 
         // digits function
-
         std::vector<int> digits(int val)
         {
             std::vector<int> result;
@@ -144,5 +142,5 @@ namespace cpk
          }
 
     }
-}
+
 #endif
