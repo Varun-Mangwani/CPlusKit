@@ -41,6 +41,10 @@ int main()
 
     char bothTrim[50] = "  hello world  ";
     cout << "Trim = " << cpk::string::Trim(bothTrim) << endl;
+    char FirstOccour[50] = "First Occour";
+    cout << "First Occour = " << cpk::string::FindChar(FirstOccour, 'O') << endl;
 
+    char subFind [50] = "Find Substringubub";
+    cout << "Find Substring = " << cpk::string::Contains(subFind, "ubuz") << endl;
     return 0;
 }

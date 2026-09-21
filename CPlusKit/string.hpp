@@ -59,7 +59,7 @@ namespace cpk::string
                 count++;
             }
         }
-        if(count == len)
+        if (count == len)
         {
             return 1;
         }
@@ -85,7 +85,7 @@ namespace cpk::string
                 count++;
             }
         }
-        if(count == len)
+        if (count == len)
         {
             return 1;
         }
@@ -111,7 +111,7 @@ namespace cpk::string
                 count++;
             }
         }
-        if(count == len)
+        if (count == len)
         {
             return 1;
         }
@@ -126,7 +126,8 @@ namespace cpk::string
      * @param str The string to inspect.
      * @return 1 if a space is found; otherwise 0.
      */
-    int Is_Space(char str[]) {
+    int Is_Space(char str[])
+    {
         int len = strl(str);
         for (int i = 0; i < len; i++)
         {
@@ -143,7 +144,8 @@ namespace cpk::string
      * @param str The string to inspect.
      * @return 1 if a lowercase character exists; otherwise 0.
      */
-    int Is_Lower(char str[]) {
+    int Is_Lower(char str[])
+    {
         int len = strl(str);
         for (int i = 0; i < len; i++)
         {
@@ -160,7 +162,8 @@ namespace cpk::string
      * @param str The string to inspect.
      * @return 1 if an uppercase character exists; otherwise 0.
      */
-    int Is_Upper(char str[]) {
+    int Is_Upper(char str[])
+    {
         int len = strl(str);
         for (int i = 0; i < len; i++)
         {
@@ -177,7 +180,8 @@ namespace cpk::string
      * @param str The string to modify in place.
      * @return A pointer to the modified string.
      */
-    char* To_Upper(char str[]) {
+    char *To_Upper(char str[])
+    {
         int len = strl(str);
         for (int i = 0; i < len; i++)
         {
@@ -194,7 +198,8 @@ namespace cpk::string
      * @param str The string to modify in place.
      * @return A pointer to the modified string.
      */
-    char* To_Lower(char str[]) {
+    char *To_Lower(char str[])
+    {
         int len = strl(str);
         for (int i = 0; i < len; i++)
         {
@@ -211,7 +216,7 @@ namespace cpk::string
      * @param str The string to transform into title case.
      * @return A pointer to the converted string.
      */
-    char * To_Title(char str[])
+    char *To_Title(char str[])
     {
         int len = strl(str);
         for (int i = 0; i < len; i++)
@@ -233,7 +238,7 @@ namespace cpk::string
      * @param str The string to trim from the left.
      * @return A pointer to the trimmed string.
      */
-    char * Ltrim(char str[])
+    char *Ltrim(char str[])
     {
         int len = strl(str);
         int start = 0;
@@ -254,7 +259,7 @@ namespace cpk::string
      * @param str The string to trim from the right.
      * @return A pointer to the trimmed string.
      */
-    char * Rtrim(char str[])
+    char *Rtrim(char str[])
     {
         int len = strl(str);
         int end = len - 1;
@@ -271,12 +276,74 @@ namespace cpk::string
      * @param str The string to clean.
      * @return A pointer to the cleaned string.
      */
-    char * Trim(char str[])
+    char *Trim(char str[])
     {
         Ltrim(str);
         Rtrim(str);
         return str;
     }
+
+    /**
+     * @brief Finds the first occurrence of a character in a string.
+     * @param str The string to search in.
+     * @param key The character to find.
+     * @return The index of the first occurrence of the character, or -1 if not found.
+     */
+    int FindChar(char str[], char key)
+    {
+        for (int i = 0; str[i] != '\0'; i++)
+        {
+            if (str[i] == key)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+    /**
+     * @brief Checks if a string contains a substring.
+     * @param str The string to search in.
+     * @param substr The substring to find.
+     * @return 1 if the substring is found, 0 otherwise.
+     */
+    int Contains(char str[],char substr[]) {
+        int k = 0;
+        for (int i = 0; str[i] != 0; i++)
+        {
+            if (str[i] == substr[k])
+            {
+                k++;
+                if (substr[k] == 0)
+                {
+                    return 1;
+                }
+            }
+            else
+            {
+                k = 0;
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * @brief Appends a string to the end of another string.
+     * @param str The string to append to.
+     * @param appendStr The string to append.
+     * @return A pointer to the resulting string.
+     */
+    char * append(char str[], char appendStr[])
+    {
+        int len1 = strl(str);
+        int len2 = strl(appendStr);
+        for (int i = 0; i < len2; i++)
+        {
+            str[len1 + i] = appendStr[i];
+        }
+        str[len1 + len2] = '\0';
+        return str;
+    }
+//=====================================
 }
 //--------------------------------------------------------
 // End Of CPlusKit String / Character Array Functions
