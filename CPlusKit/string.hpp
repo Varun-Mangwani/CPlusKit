@@ -343,6 +343,71 @@ namespace cpk::string
         str[len1 + len2] = '\0';
         return str;
     }
+
+    /**
+     * @brief Prepends a string to the beginning of another string.
+     * @param str The string to prepend to.
+     * @param prependStr The string to prepend.
+     * @return A pointer to the resulting string.
+     */
+    char * prepend(char str[], char prependStr[])
+    {
+        int len1 = strl(str);
+        int len2 = strl(prependStr);
+        for (int i = len1 - 1; i >= 0; i--)
+        {
+            str[i + len2] = str[i];
+        }
+        for (int i = 0; i < len2; i++)
+        {
+            str[i] = prependStr[i];
+        }
+        str[len1 + len2] = '\0';
+        return str;
+    }
+    /**
+     * @brief Replaces all occurrences of a character in a string with another character.
+     * @param str The string to modify.
+     * @param oldChar The character to replace.
+     * @param newChar The character to replace with.
+     * @return A pointer to the resulting string.
+     */
+    char * replace(char str[], char oldChar, char newChar)
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] == oldChar)
+            {
+                str[i] = newChar;
+            }
+        }
+        return str;
+    }
+
+    /**
+     * @brief Counts the number of words in a string.
+     * @param str The string to count words in.
+     * @return The number of words in the string.
+     */
+    int wordCount(char str[])
+    {
+        int count = 0;
+        bool inWord = false;
+        for (int i = 0; str[i] != '\0'; i++)
+        {
+            if (str[i] != ' ' && !inWord)
+            {
+                inWord = true;
+                count++;
+            }
+            else if (str[i] == ' ')
+            {
+                inWord = false;
+            }
+        }
+        return count;
+    }
 //=====================================
 }
 //--------------------------------------------------------

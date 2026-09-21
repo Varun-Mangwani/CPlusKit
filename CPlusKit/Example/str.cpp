@@ -46,5 +46,9 @@ int main()
 
     char subFind [50] = "Find Substringubub";
     cout << "Find Substring = " << cpk::string::Contains(subFind, "ubuz") << endl;
+  
+    char str1[50] = "Hello, ";
+    char str2[50] = "World!";
+    cout << "Append = " << cpk::string::append(str1, str2) << endl;
     return 0;
 }
