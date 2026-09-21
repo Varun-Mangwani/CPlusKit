@@ -194,5 +194,6 @@ using namespace std;
          }
 
     }
+    //This is a header file for the CPlusKit library, providing a collection of mathematical utility functions. It includes functions for absolute value, minimum and maximum comparisons, clamping values, checking even/odd status, calculating factorials, checking for prime numbers, digit manipulation (splitting, summing, multiplying, reversing), and more. The functions are encapsulated within the `cpk::math` namespace to avoid naming conflicts.
 
 #endif
