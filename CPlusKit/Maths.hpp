@@ -235,8 +235,33 @@ namespace cpk::math
         }
         return 1;
     }
-}
-
+    
+    /*
+    * @brief Checks if a number is a perfect number.
+    * @param a The number to check.
+    * @return 1 if the number is perfect, 0 otherwise.
+    */
+   int IsPerfect(int a) {
+       int sum =0;
+       for(int i=1; i<a; i++)
+       {
+           if(a%i==0)
+           {
+               sum+=i;
+            }
+        }
+        if(sum==a)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+        
+    }
+    
     // This is a header file for the CPlusKit library, providing a collection of mathematical utility functions. It includes functions for absolute value, minimum and maximum comparisons, clamping values, checking even/odd status, calculating factorials, checking for prime numbers, digit manipulation (splitting, summing, multiplying, reversing), and more. The functions are encapsulated within the `cpk::math` namespace to avoid naming conflicts.
-
-#endif
+}
+    
+    #endif

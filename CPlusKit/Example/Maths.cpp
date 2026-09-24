@@ -31,6 +31,8 @@ int main()
     cout << "sumdigits(12345) = " << cpk::math::sumdigits(12345) << endl;
     cout << "productdigits(12345) = " << cpk::math::productdigits(12345) << endl;
     cout << "ReverseDigits(12345) = " << cpk::math::ReverseDigits(12345) << endl;
-
+    cout << "lcm(10, 25) = " << cpk::math::lcm(10, 25) << endl;
+    cout << "HCF(10, 25) = " << cpk::math::HCF(10, 25) << endl;
+    cout << "IsPerfect(28) = " << cpk::math::IsPerfect(28) << endl;
     return 0;
 }
