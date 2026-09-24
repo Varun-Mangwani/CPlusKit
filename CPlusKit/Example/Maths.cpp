@@ -34,5 +34,6 @@ int main()
     cout << "lcm(10, 25) = " << cpk::math::lcm(10, 25) << endl;
     cout << "HCF(10, 25) = " << cpk::math::HCF(10, 25) << endl;
     cout << "IsPerfect(28) = " << cpk::math::IsPerfect(28) << endl;
+    cout << "sign(0) = " << cpk::math::sign(0) << endl;
     return 0;
 }
