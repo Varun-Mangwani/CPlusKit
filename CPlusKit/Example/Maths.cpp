@@ -3,7 +3,9 @@
 #include "../cpluskit.hpp"
 
 using namespace std;
+using namespace cpk::math;
 
+// function no. - 49
 int main()
 {
     int value = -42;
@@ -35,5 +37,7 @@ int main()
     cout << "HCF(10, 25) = " << cpk::math::HCF(10, 25) << endl;
     cout << "IsPerfect(28) = " << cpk::math::IsPerfect(28) << endl;
     cout << "sign(0) = " << cpk::math::sign(0) << endl;
+    cout << "Armstrong : " << Is_Armstrong(153) << endl;
+    cout << "Strong Func: " << Is_Strong(15) << endl;
     return 0;
 }

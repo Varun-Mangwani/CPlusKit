@@ -12,16 +12,16 @@ IsLesser()//
 IsBetween()//
 IsMultiple()//
 IsDivisible()//
-swapValues()
+swapValues()//
 2. Number Properties — 20
 IsEven()//
 IsOdd()//
 IsPrime()//
-IsComposite()
+IsComposite()//
 IsPerfect()//
-IsArmstrong()
-IsPalindrome()
-IsStrongNumber()
+IsArmstrong()//
+IsPalindrome()//
+IsStrong()//
 IsHarshad()
 IsAutomorphic()
 IsNeon()

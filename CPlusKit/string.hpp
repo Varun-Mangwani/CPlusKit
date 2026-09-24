@@ -11,6 +11,7 @@ namespace cpk::string
      * @param str The null-terminated character array to measure.
      * @return The length of the string before the null terminator.
      */
+    // function no. - 29
     int strl(char str[])
     {
         int len = 0;
@@ -26,6 +27,7 @@ namespace cpk::string
      * @param str The string to inspect.
      * @return 0 if empty, otherwise the length of the string.
      */
+    // function no. - 30
     int Is_Empty(char str[])
     {
         if (str[0] == '\0')
@@ -48,6 +50,7 @@ namespace cpk::string
      * @param str The string to validate.
      * @return 1 if all characters are letters; otherwise 0.
      */
+    // function no. - 31
     int Is_Alpha(char str[])
     {
         int len = strl(str);
@@ -74,6 +77,7 @@ namespace cpk::string
      * @param str The string to validate.
      * @return 1 if all characters are digits; otherwise 0.
      */
+    // function no. - 32
     int Is_Digit(char str[])
     {
         int len = strl(str);
@@ -100,6 +104,7 @@ namespace cpk::string
      * @param str The string to validate.
      * @return 1 if the string is alphanumeric; otherwise 0.
      */
+    // function no. - 33
     int Is_Alnum(char str[])
     {
         int len = strl(str);
@@ -126,6 +131,7 @@ namespace cpk::string
      * @param str The string to inspect.
      * @return 1 if a space is found; otherwise 0.
      */
+    // function no. - 34
     int Is_Space(char str[])
     {
         int len = strl(str);
@@ -144,6 +150,7 @@ namespace cpk::string
      * @param str The string to inspect.
      * @return 1 if a lowercase character exists; otherwise 0.
      */
+    // function no. - 35
     int Is_Lower(char str[])
     {
         int len = strl(str);
@@ -162,6 +169,7 @@ namespace cpk::string
      * @param str The string to inspect.
      * @return 1 if an uppercase character exists; otherwise 0.
      */
+    // function no. - 36
     int Is_Upper(char str[])
     {
         int len = strl(str);
@@ -180,6 +188,7 @@ namespace cpk::string
      * @param str The string to modify in place.
      * @return A pointer to the modified string.
      */
+    // function no. - 37
     char *To_Upper(char str[])
     {
         int len = strl(str);
@@ -198,6 +207,7 @@ namespace cpk::string
      * @param str The string to modify in place.
      * @return A pointer to the modified string.
      */
+    // function no. - 38
     char *To_Lower(char str[])
     {
         int len = strl(str);
@@ -216,6 +226,7 @@ namespace cpk::string
      * @param str The string to transform into title case.
      * @return A pointer to the converted string.
      */
+    // function no. - 39
     char *To_Title(char str[])
     {
         int len = strl(str);
@@ -238,6 +249,7 @@ namespace cpk::string
      * @param str The string to trim from the left.
      * @return A pointer to the trimmed string.
      */
+    // function no. - 40
     char *Ltrim(char str[])
     {
         int len = strl(str);
@@ -259,6 +271,7 @@ namespace cpk::string
      * @param str The string to trim from the right.
      * @return A pointer to the trimmed string.
      */
+    // function no. - 41
     char *Rtrim(char str[])
     {
         int len = strl(str);
@@ -276,6 +289,7 @@ namespace cpk::string
      * @param str The string to clean.
      * @return A pointer to the cleaned string.
      */
+    // function no. - 42
     char *Trim(char str[])
     {
         Ltrim(str);
@@ -289,6 +303,7 @@ namespace cpk::string
      * @param key The character to find.
      * @return The index of the first occurrence of the character, or -1 if not found.
      */
+    // function no. - 43
     int FindChar(char str[], char key)
     {
         for (int i = 0; str[i] != '\0'; i++)
@@ -306,6 +321,7 @@ namespace cpk::string
      * @param substr The substring to find.
      * @return 1 if the substring is found, 0 otherwise.
      */
+    // function no. - 44
     int Contains(char str[],char substr[]) {
         int k = 0;
         for (int i = 0; str[i] != 0; i++)
@@ -332,6 +348,7 @@ namespace cpk::string
      * @param appendStr The string to append.
      * @return A pointer to the resulting string.
      */
+    // function no. - 45
     char * append(char str[], char appendStr[])
     {
         int len1 = strl(str);
@@ -350,6 +367,7 @@ namespace cpk::string
      * @param prependStr The string to prepend.
      * @return A pointer to the resulting string.
      */
+    // function no. - 46
     char * prepend(char str[], char prependStr[])
     {
         int len1 = strl(str);
@@ -372,6 +390,7 @@ namespace cpk::string
      * @param newChar The character to replace with.
      * @return A pointer to the resulting string.
      */
+    // function no. - 47
     char * replace(char str[], char oldChar, char newChar)
     {
         int len = strl(str);
@@ -390,6 +409,7 @@ namespace cpk::string
      * @param str The string to count words in.
      * @return The number of words in the string.
      */
+    // function no. - 48
     int wordCount(char str[])
     {
         int count = 0;
