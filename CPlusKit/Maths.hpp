@@ -260,6 +260,26 @@ namespace cpk::math
         }
         
     }
+    /**
+     * @brief Returns the sign of a number.
+     * @param val The number to check.
+     * @return 1 if the number is positive, -1 if it's negative, and 0 if it's zero.
+     */
+    int sign(int val)
+    {
+        if (val > 0)
+        {
+            return 1;
+        }
+        else if (val < 0)
+        {
+            return -1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
     
     // This is a header file for the CPlusKit library, providing a collection of mathematical utility functions. It includes functions for absolute value, minimum and maximum comparisons, clamping values, checking even/odd status, calculating factorials, checking for prime numbers, digit manipulation (splitting, summing, multiplying, reversing), and more. The functions are encapsulated within the `cpk::math` namespace to avoid naming conflicts.
 }
