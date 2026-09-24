@@ -6,7 +6,6 @@
 
 using namespace std;
 
-// function no. - 51
 int main()
 {
     // String tests
@@ -63,6 +62,8 @@ int main()
     assert(cpk::math::factorial(5) == 120);
     assert(cpk::math::IsPrime(13) == 1);
     assert(cpk::math::IsPrime(12) == 0);
+    assert(cpk::math::IsHappyNumber(19) == 1);
+    assert(cpk::math::IsHappyNumber(20) == 0);
 
     vector<int> d = cpk::math::digits(12345);
     assert(d.size() == 5);

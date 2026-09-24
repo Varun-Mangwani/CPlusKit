@@ -5,7 +5,6 @@
 using namespace std;
 using namespace cpk::math;
 
-// function no. - 49
 int main()
 {
     int value = -42;
@@ -39,5 +38,11 @@ int main()
     cout << "sign(0) = " << cpk::math::sign(0) << endl;
     cout << "Armstrong : " << Is_Armstrong(153) << endl;
     cout << "Strong Func: " << Is_Strong(15) << endl;
+    cout << "Automorphic : " << Is_Automorphic(2) << endl;
+    cout << "Nenon Number(9) " << Is_Neon(9) << endl ;  
+    cout << "Is Spy Number : " << Is_SpyNumber(1124) << endl ;
+    cout << "Count Digits : " << countDigits(12345) << endl;
+    cout << "First Digit : " << firstDigit(9414) << endl;
+    cout<< "MiddleDigit : " << middleDigit(1234567) << endl;
     return 0;
 }
