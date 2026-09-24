@@ -280,7 +280,127 @@ namespace cpk::math
             return 0;
         }
     }
-    
+    /**
+     * @brief Checks if a number is positive.
+     * @param val The number to check.
+     * @return 1 if the number is positive, 0 otherwise.
+     */
+    int Is_Positive(int val)
+    {
+        return (val > 0);
+    }
+
+    /**
+     * @brief Checks if a number is negative.
+     * @param val The number to check.
+     * @return 1 if the number is negative, 0 otherwise.
+     */
+    int Is_Negative(int val)
+    {
+        return (val < 0);
+    }
+
+    /**
+     * @brief Checks if a number is zero.
+     * @param val The number to check.
+     * @return 1 if the number is zero, 0 otherwise.
+     */
+    int Is_Zero(int val)
+    {
+        return (val == 0);
+    }
+
+    /**
+     * @brief Checks if two numbers are equal.
+     * @param a The first number.
+     * @param b The second number.
+     * @return 1 if the numbers are equal, 0 otherwise.
+     */
+    int Is_equal(int a, int b)
+    {
+        return (a == b);
+    }
+
+    /**
+     * @brief Checks if a number is greater than another.
+     * @param a The first number.
+     * @param b The second number.
+     * @return 1 if the first number is greater than the second, 0 otherwise.
+     */
+    int Is_Greater(int a, int b)
+    {
+        return (a > b);
+    }
+    /**
+     * @brief Checks if a number is less than another.
+     * @param a The first number.
+     * @param b The second number.
+     * @return 1 if the first number is less than the second, 0 otherwise.
+     */
+    int Is_Less(int a, int b)
+    {
+        return (a < b);
+    }
+
+    /**
+     * @brief Checks if a number is between two other numbers (inclusive).
+     * @param val The number to check.
+     * @param lower The lower bound.
+     * @param upper The upper bound.
+     * @return 1 if the number is between the bounds, 0 otherwise.
+     */
+    int Is_Between(int val, int lower, int upper)
+    {
+        return (val >= lower && val <= upper);
+    }
+    /**
+     * @brief Checks if a number is positive and even.
+     * @param val The number to check.
+     * @return 1 if the number is positive and even, 0 otherwise.
+     */
+    int Is_Positive_Even(int val)
+    {
+        return (Is_Positive(val) && IsEven(val));
+    }
+
+    /**
+     * @brief Checks if a number is a multiple of another.
+     * @param val The number to check.
+     * @param multiple The multiple to check against.
+     * @return 1 if the number is a multiple of the other, 0 otherwise.
+     */
+    int Is_Multiple(int val, int multiple)
+    {
+        return (val % multiple == 0);
+    }
+
+    /**
+     * @brief Checks if a number is a factor of another.
+     * @param val The number to check.
+     * @param factor The factor to check against.
+     * @return 1 if the number is a factor of the other, 0 otherwise.
+     */
+    int Is_Factor(int val, int factor)
+    {
+        return (factor % val == 0);
+    }
+    /**
+     * @brief Checks if a number is divisible by another.
+     * @param val The number to check.
+     * @param divisor The divisor to check against.
+     * @return 1 if the number is divisible by the other, 0 otherwise.
+     */
+    int Is_divisible(int val, int divisor)
+    {
+        return (val % divisor == 0);
+    }
+
+    void swapValues(int &a, int &b)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
     // This is a header file for the CPlusKit library, providing a collection of mathematical utility functions. It includes functions for absolute value, minimum and maximum comparisons, clamping values, checking even/odd status, calculating factorials, checking for prime numbers, digit manipulation (splitting, summing, multiplying, reversing), and more. The functions are encapsulated within the `cpk::math` namespace to avoid naming conflicts.
 }
     

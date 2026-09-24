@@ -2,16 +2,16 @@ abs() //
 min()//
 max()//
 clamp()//
-sign()
-IsPositive()
-IsNegative()
-IsZero()
-IsEqual()
-IsGreater()
-IsLesser()
-IsBetween()
-IsMultiple()
-IsDivisible()
+sign()//
+IsPositive()//
+IsNegative()//
+IsZero()//
+IsEqual()//
+IsGreater()//
+IsLesser()//
+IsBetween()//
+IsMultiple()//
+IsDivisible()//
 swapValues()
 2. Number Properties — 20
 IsEven()//
