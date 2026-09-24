@@ -322,7 +322,8 @@ namespace cpk::string
      * @param substr The substring to find.
      * @return 1 if the substring is found, 0 otherwise.
      */
-    int Contains(char str[],char substr[]) {
+    int Contains(char str[], char substr[])
+    {
         int k = 0;
         for (int i = 0; str[i] != 0; i++)
         {
@@ -349,7 +350,7 @@ namespace cpk::string
      * @param appendStr The string to append.
      * @return A pointer to the resulting string.
      */
-    char * append(char str[], char appendStr[])
+    char *append(char str[], char appendStr[])
     {
         int len1 = strl(str);
         int len2 = strl(appendStr);
@@ -368,7 +369,7 @@ namespace cpk::string
      * @param prependStr The string to prepend.
      * @return A pointer to the resulting string.
      */
-    char * prepend(char str[], char prependStr[])
+    char *prepend(char str[], char prependStr[])
     {
         int len1 = strl(str);
         int len2 = strl(prependStr);
@@ -391,7 +392,7 @@ namespace cpk::string
      * @param newChar The character to replace with.
      * @return A pointer to the resulting string.
      */
-    char * replace(char str[], char oldChar, char newChar)
+    char *replace(char str[], char oldChar, char newChar)
     {
         int len = strl(str);
         for (int i = 0; i < len; i++)
@@ -484,7 +485,6 @@ namespace cpk::string
         return str;
     }
 
-
     // function no. - 24
     /**
      * @brief Converts the first letter of every word to uppercase.
@@ -519,7 +519,7 @@ namespace cpk::string
      * @param str The string to modify.
      * @return A pointer to the modified string.
      */
-    char * lowerWords(char str[])
+    char *lowerWords(char str[])
     {
         int len = strl(str);
         bool inWord = false;
@@ -684,7 +684,7 @@ namespace cpk::string
         }
         return 0;
     }
-    
+
     // function no. - 33
     /**
      * @brief Checks whether a string contains a special character.
@@ -784,7 +784,146 @@ namespace cpk::string
         }
         return 1;
     }
-//=====================================
+
+    // function no. - 38
+    /**
+     * @brief Removes all space characters from a string.
+     * @param str The string to modify.
+     * @return A pointer to the modified string.
+     */
+    char *removeSpaces(char str[])
+    {
+        int len = strl(str);
+        int j = 0;
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] != ' ')
+            {
+                str[j++] = str[i];
+            }
+        }
+        str[j] = '\0';
+        return str;
+    }
+
+    // function no. - 39
+    /**
+     * @brief Replaces consecutive spaces with a single space.
+     * @param str The string to modify.
+     * @return A pointer to the modified string.
+     */
+    char *removeExtraSpaces(char str[])
+    {
+        int len = strl(str);
+        int j = 0;
+        bool inSpace = false;
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] != ' ')
+            {
+                str[j++] = str[i];
+                inSpace = false;
+            }
+            else if (!inSpace)
+            {
+                str[j++] = ' ';
+                inSpace = true;
+            }
+        }
+        str[j] = '\0';
+        return str;
+    }
+
+    // function no. - 40
+    /**
+     * @brief Removes all numeric digits from a string.
+     * @param str The string to modify.
+     * @return A pointer to the modified string.
+     */
+    char *removeDigits(char str[])
+    {
+        int len = strl(str);
+        int j = 0;
+        for (int i = 0; i < len; i++)
+        {
+            if (!(str[i] >= '0' && str[i] <= '9'))
+            {
+                str[j++] = str[i];
+            }
+        }
+        str[j] = '\0';
+        return str;
+    }
+
+    // function no. - 41
+    /**
+     * @brief Removes all alphabetic characters from a string.
+     * @param str The string to modify.
+     * @return A pointer to the modified string.
+     */
+    char *removeLetters(char str[])
+    {
+        int len = strl(str);
+        int j = 0;
+        for (int i = 0; i < len; i++)
+        {
+            if (!((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z')))
+            {
+                str[j++] = str[i];
+            }
+        }
+        str[j] = '\0';
+        return str;
+    }
+
+    // function no. - 42
+    /**
+     * @brief Removes characters that are not letters, digits, or spaces.
+     * @param str The string to modify.
+     * @return A pointer to the modified string.
+     */
+    char *removeSpecialChars(char str[])
+    {
+        int len = strl(str);
+        int j = 0;
+        for (int i = 0; i < len; i++)
+        {
+            if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z') || (str[i] >= '0' && str[i] <= '9') || str[i] == ' ')
+            {
+                str[j++] = str[i];
+            }
+        }
+        str[j] = '\0';
+        return str;
+    }
+
+    // function no. - 43
+    /**
+     * @brief Removes special characters and collapses repeated spaces.
+     * @param str The string to clean.
+     * @return A pointer to the cleaned string.
+     */
+    char *cleanString(char str[])
+    {
+        removeExtraSpaces(str);
+        removeSpecialChars(str);
+        return str;
+    }
+
+    // function no. - 44
+    /**
+     * @brief Cleans a string and converts its letters to lowercase.
+     * @param str The string to normalize.
+     * @return A pointer to the normalized string.
+     */
+    char *normalizeString(char str[])
+    {
+        removeExtraSpaces(str);
+        removeSpecialChars(str);
+        To_Lower(str);
+        return str;
+    }
+    //=====================================
 }
 //--------------------------------------------------------
 // End Of CPlusKit String / Character Array Functions

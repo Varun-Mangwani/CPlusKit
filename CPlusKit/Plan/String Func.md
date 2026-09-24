@@ -36,23 +36,23 @@ IsConsonant()//
 IsSpecialChar()//
 IsLetter()//
 IsNumeric()//
-IsBinary()
-IsHexadecimal()
+IsBinary()//
+IsHexadecimal()//
 IsASCII()
 CountDigits()
 CountLetters()
 CountSpaces()
 4. Trimming / Cleaning — 10
-Trim()
-TrimLeft()
-TrimRight()
-RemoveSpaces()
-RemoveExtraSpaces()
-RemoveDigits()
-RemoveLetters()
-RemoveSpecialChars()
-CleanString()
-NormalizeSpaces()
+Trim()//
+TrimLeft()//
+TrimRight()//
+RemoveSpaces()//
+RemoveExtraSpaces()//
+RemoveDigits()//
+RemoveLetters()//
+RemoveSpecialChars()//
+CleanString()//
+NormalizeSpaces()//
 5. Searching — 10
 Find()
 FindLast()
