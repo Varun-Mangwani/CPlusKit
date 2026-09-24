@@ -45,10 +45,18 @@ int main()
     cout << "First Occour = " << cpk::string::FindChar(FirstOccour, 'O') << endl;
 
     char subFind [50] = "Find Substringubub";
-    cout << "Find Substring = " << cpk::string::Contains(subFind, "ubuz") << endl;
+    char substring[10] = "ubuz";
+    cout << "Find Substring = " << cpk::string::Contains(subFind, substring) << endl;
   
     char str1[50] = "Hello, ";
     char str2[50] = "World!";
     cout << "Append = " << cpk::string::append(str1, str2) << endl;
+    char prependTarget[50] = "World!";
+    char prependValue[50] = "Hello, ";
+    cout << "Prepend = " << cpk::string::prepend(prependTarget, prependValue) << endl;
+    char replaceTarget[50] = "banana";
+    cout << "Replace = " << cpk::string::replace(replaceTarget, 'a', 'o') << endl;
+    char words[50] = "one two three";
+    cout << "Word count = " << cpk::string::wordCount(words) << endl;
     return 0;
 }

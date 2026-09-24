@@ -72,6 +72,21 @@ int main()
     assert(cpk::math::sumdigits(12345) == 15);
     assert(cpk::math::productdigits(12345) == 120);
     assert(cpk::math::ReverseDigits(12345) == 54321);
+    assert(cpk::math::Fibonacci(10) == 55);
+    assert(cpk::math::FibonacciSum(7) == 20);
+    assert(cpk::math::TriangularNumber(5) == 15);
+    assert(cpk::math::IsTriangular(15) == 1);
+    assert(cpk::math::ArithmeticTerm(2, 3, 4) == 11);
+    assert(cpk::math::ArithmeticSum(2, 3, 4) == 26);
+    assert(cpk::math::GeometricTerm(2, 3, 4) == 54);
+    assert(cpk::math::GeometricSum(2, 3, 4) == 80);
+    assert(cpk::math::PowerOfTwo(5) == 32);
+    assert(cpk::math::IsPowerOfTwo(32) == 1);
+    assert(cpk::math::IsPowerOfThree(27) == 1);
+    assert(cpk::math::NextPowerOfTwo(33) == 64);
+    assert(cpk::math::SquareSum(5) == 55);
+    assert(cpk::math::CubeSum(3) == 36);
+    assert(cpk::math::NaturalSum(5) == 15);
 
     cout << "All tests passed." << endl;
     return 0;

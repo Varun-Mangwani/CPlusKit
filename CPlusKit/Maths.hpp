@@ -561,12 +561,13 @@ namespace cpk::math
      */
     int Is_Harshad(int val)
     {
-        int tmp, sum = 0, dgt;
+        int tmp = val, sum = 0, dgt;
 
         while (val != 0)
         {
             dgt = val % 10;
             sum = sum + dgt;
+            val /= 10;
         }
 
         if (tmp % sum == 0)
@@ -1156,6 +1157,7 @@ namespace cpk::math
         return val; // If no factors found, return the number itself
     }
 
+    // function no. - 66
     /**
      * @brief Finds the next prime number after a given value.
      * @param val The number to start searching from.
@@ -1174,6 +1176,12 @@ namespace cpk::math
         }
     }
 
+    // function no. - 67
+    /**
+     * @brief Finds the previous prime number before a given value.
+     * @param val The number to start searching from.
+     * @return The previous prime number before val, or -1 if none exists.
+     */
     int previousPrime(int val)
     {
         int prev = val - 1;
@@ -1188,6 +1196,12 @@ namespace cpk::math
         return -1; // Return -1 if no previous prime exists
     }
 
+    // function no. - 68
+    /**
+     * @brief Finds the nth prime number.
+     * @param n The one-based prime index.
+     * @return The nth prime number, or -1 for invalid input.
+     */
     int NthPrime(int n)
     {
         if (n < 1)
@@ -1207,6 +1221,12 @@ namespace cpk::math
         return num;
     }
 
+    // function no. - 69
+    /**
+     * @brief Counts the prime numbers up to a value.
+     * @param val The upper bound to inspect.
+     * @return The number of primes from 2 through val.
+     */
     int primeCount(int val)
     {
         int count = 0;
@@ -1220,6 +1240,12 @@ namespace cpk::math
         return count;
     }
 
+    // function no. - 70
+    /**
+     * @brief Counts the prime factors of a number, including repetitions.
+     * @param val The number to factor.
+     * @return The number of prime factors.
+     */
     int primeFactorsCount(int val)
     {
         std::vector<int> factors;
@@ -1234,6 +1260,12 @@ namespace cpk::math
         return factors.size(); // Return the count of prime factors
     }
 
+    // function no. - 71
+    /**
+     * @brief Returns the prime factors of a number in a dynamic array.
+     * @param val The number to factor.
+     * @return A dynamically allocated array of prime factors.
+     */
     int * primeFactors(int val)
     {
         std::vector<int> factors;
@@ -1253,6 +1285,12 @@ namespace cpk::math
         return arr; // Return dynamically allocated array of prime factors
     }
 
+    // function no. - 72
+    /**
+     * @brief Adds the prime factors of a number, including repetitions.
+     * @param val The number to factor.
+     * @return The sum of the prime factors.
+     */
     int sumPrimeFactors(int val)
     {
         int sum = 0;
@@ -1267,6 +1305,12 @@ namespace cpk::math
         return sum; // Return the sum of prime factors
     }
 
+    // function no. - 73
+    /**
+     * @brief Finds the largest prime factor of a number.
+     * @param val The number to factor.
+     * @return The largest prime factor, or -1 if none exists.
+     */
     int largestPrimeFactor(int val)
     {
         int largest = -1;
@@ -1281,6 +1325,12 @@ namespace cpk::math
         return largest; // Return the largest prime factor
     }
 
+    // function no. - 74
+    /**
+     * @brief Finds the smallest prime factor of a number.
+     * @param val The number to factor.
+     * @return The smallest prime factor.
+     */
     int smallestPrimeFactor(int val)
     {
         for (int i = 2; i <= val; i++)
@@ -1291,6 +1341,349 @@ namespace cpk::math
             }
         }
         return val; // If no factors found, return the number itself
+    }
+
+    // function no. - 75
+    /**
+     * @brief Checks whether a prime belongs to a twin-prime pair.
+     * @param val The number to check.
+     * @return 1 if val is a twin prime, otherwise 0.
+     */
+    int isTwinPrime(int val)
+    {
+        if (!IsPrime(val))
+        {
+            return 0; // Not a prime number
+        }
+        if (IsPrime(val - 2) || IsPrime(val + 2))
+        {
+            return 1; // Twin prime found
+        }
+        return 0; // Not a twin prime
+    }
+
+    // function no. - 76
+    /**
+     * @brief Checks whether two numbers are coprime.
+     * @param a The first number.
+     * @param b The second number.
+     * @return 1 if the numbers are coprime, otherwise 0.
+     */
+    int isCoPrime(int a, int b)
+    {
+        return (gcdMultiple(a, b) == 1); // Return 1 if coprime, 0 otherwise
+    }
+
+    // function no. - 77
+    /**
+     * @brief Finds the next multiple after a value.
+     * @param val The starting value.
+     * @param multiple The multiple to search for.
+     * @return The next multiple, or -1 if multiple is zero.
+     */
+    int nextMultiple(int val, int multiple)
+    {
+        if (multiple == 0)
+        {
+            return -1; // Avoid division by zero
+        }
+        return ((val / multiple) + 1) * multiple; // Return the next multiple
+    }
+
+    // function no. - 78
+    /**
+     * @brief Finds the previous multiple before a value.
+     * @param val The starting value.
+     * @param multiple The multiple to search for.
+     * @return The previous multiple, or -1 if multiple is zero.
+     */
+    int previousMultiple(int val, int multiple)
+    {
+        if (multiple == 0)
+        {
+            return -1; // Avoid division by zero
+        }
+        return ((val / multiple) - 1) * multiple; // Return the previous multiple
+    }
+
+    // function no. - 79
+    /**
+     * @brief Checks whether a value is a factor of another value.
+     * @param val The number to inspect.
+     * @param factor The possible factor.
+     * @return factor if it divides val, otherwise -1.
+     */
+    int findFactor(int val, int factor)
+    {
+        if (factor == 0)
+        {
+            return -1; // Avoid division by zero
+        }
+        if (val % factor == 0)
+        {
+            return factor; // Return the factor if it divides val
+        }
+        return -1; // Return -1 if not a factor
+    }
+
+    // function no. - 80
+    /**
+     * @brief Checks whether a number is a factorial value.
+     * @param val The number to check.
+     * @return 1 if val is a factorial value, otherwise 0.
+     */
+    int isFactorial(int val)
+    {
+        if (val < 0)
+        {
+            return 0; // Negative numbers cannot be factorials
+        }
+        int fact = 1;
+        for (int i = 1; fact < val; i++)
+        {
+            fact *= i;
+            if (fact == val)
+            {
+                return 1; // Found a factorial match
+            }
+        }
+        return 0; // Not a factorial
+    }
+
+    // function no. - 81
+    /**
+     * @brief Returns the nth Fibonacci number, starting with Fibonacci(0) = 0.
+     * @param n The zero-based Fibonacci index.
+     * @return The nth Fibonacci number, or -1 for invalid input.
+     */
+    int Fibonacci(int n)
+    {
+        if (n < 0)
+        {
+            return -1;
+        }
+        int previous = 0;
+        int current = 1;
+        for (int i = 0; i < n; i++)
+        {
+            int next = previous + current;
+            previous = current;
+            current = next;
+        }
+        return previous;
+    }
+
+    // function no. - 82
+    /**
+     * @brief Calculates the sum of the first n Fibonacci numbers.
+     * @param n The number of terms to sum, starting with 0.
+     * @return The Fibonacci sum, or 0 for a non-positive term count.
+     */
+    int FibonacciSum(int n)
+    {
+        if (n <= 0)
+        {
+            return 0;
+        }
+        int sum = 0;
+        int previous = 0;
+        int current = 1;
+        for (int i = 0; i < n; i++)
+        {
+            sum += previous;
+            int next = previous + current;
+            previous = current;
+            current = next;
+        }
+        return sum;
+    }
+
+    // function no. - 83
+    /**
+     * @brief Returns the nth triangular number.
+     * @param n The one-based term index.
+     * @return The nth triangular number, or 0 for a non-positive index.
+     */
+    int TriangularNumber(int n)
+    {
+        return (n <= 0) ? 0 : n * (n + 1) / 2;
+    }
+
+    // function no. - 84
+    /**
+     * @brief Checks whether a number is triangular.
+     * @param val The number to check.
+     * @return 1 if val is triangular, otherwise 0.
+     */
+    int IsTriangular(int val)
+    {
+        if (val < 0)
+        {
+            return 0;
+        }
+        for (int n = 1; TriangularNumber(n) <= val; n++)
+        {
+            if (TriangularNumber(n) == val)
+            {
+                return 1;
+            }
+        }
+        return val == 0;
+    }
+
+    // function no. - 85
+    /**
+     * @brief Returns a term from an arithmetic sequence.
+     * @param first The first term in the sequence.
+     * @param difference The common difference.
+     * @param n The one-based term index.
+     * @return The nth arithmetic term, or 0 for a non-positive index.
+     */
+    int ArithmeticTerm(int first, int difference, int n)
+    {
+        return (n <= 0) ? 0 : first + (n - 1) * difference;
+    }
+
+    // function no. - 86
+    /**
+     * @brief Returns the sum of the first n arithmetic terms.
+     * @param first The first term in the sequence.
+     * @param difference The common difference.
+     * @param n The number of terms to sum.
+     * @return The arithmetic series sum, or 0 for a non-positive term count.
+     */
+    int ArithmeticSum(int first, int difference, int n)
+    {
+        return (n <= 0) ? 0 : n * (2 * first + (n - 1) * difference) / 2;
+    }
+
+    // function no. - 87
+    /**
+     * @brief Returns a term from a geometric sequence.
+     * @param first The first term in the sequence.
+     * @param ratio The common ratio.
+     * @param n The one-based term index.
+     * @return The nth geometric term, or 0 for a non-positive index.
+     */
+    int GeometricTerm(int first, int ratio, int n)
+    {
+        return (n <= 0) ? 0 : first * power(ratio, n - 1);
+    }
+
+    // function no. - 88
+    /**
+     * @brief Returns the sum of the first n geometric terms.
+     * @param first The first term in the sequence.
+     * @param ratio The common ratio.
+     * @param n The number of terms to sum.
+     * @return The geometric series sum, or 0 for a non-positive term count.
+     */
+    int GeometricSum(int first, int ratio, int n)
+    {
+        if (n <= 0)
+        {
+            return 0;
+        }
+        if (ratio == 1)
+        {
+            return first * n;
+        }
+        return first * (power(ratio, n) - 1) / (ratio - 1);
+    }
+
+    // function no. - 89
+    /**
+     * @brief Returns a power of two.
+     * @param exponent The exponent to apply to two.
+     * @return 2 raised to exponent, or 0 for a negative exponent.
+     */
+    int PowerOfTwo(int exponent)
+    {
+        return (exponent < 0) ? 0 : power(2, exponent);
+    }
+
+    // function no. - 90
+    /**
+     * @brief Checks whether a number is a power of two.
+     * @param val The number to check.
+     * @return 1 if val is a power of two, otherwise 0.
+     */
+    int IsPowerOfTwo(int val)
+    {
+        return val > 0 && (val & (val - 1)) == 0;
+    }
+
+    // function no. - 91
+    /**
+     * @brief Checks whether a number is a power of three.
+     * @param val The number to check.
+     * @return 1 if val is a power of three, otherwise 0.
+     */
+    int IsPowerOfThree(int val)
+    {
+        if (val < 1)
+        {
+            return 0;
+        }
+        while (val % 3 == 0)
+        {
+            val /= 3;
+        }
+        return val == 1;
+    }
+
+    // function no. - 92
+    /**
+     * @brief Returns the smallest power of two greater than or equal to a value.
+     * @param val The value to round up.
+     * @return The next power of two, or 1 for non-positive input.
+     */
+    int NextPowerOfTwo(int val)
+    {
+        int result = 1;
+        while (result < val)
+        {
+            result *= 2;
+        }
+        return result;
+    }
+
+    // function no. - 93
+    /**
+     * @brief Calculates the sum of the squares from 1 through n.
+     * @param n The inclusive upper bound.
+     * @return The sum of squares, or 0 for a non-positive bound.
+     */
+    int SquareSum(int n)
+    {
+        return (n <= 0) ? 0 : n * (n + 1) * (2 * n + 1) / 6;
+    }
+
+    // function no. - 94
+    /**
+     * @brief Calculates the sum of the cubes from 1 through n.
+     * @param n The inclusive upper bound.
+     * @return The sum of cubes, or 0 for a non-positive bound.
+     */
+    int CubeSum(int n)
+    {
+        if (n <= 0)
+        {
+            return 0;
+        }
+        int sum = n * (n + 1) / 2;
+        return sum * sum;
+    }
+
+    // function no. - 95
+    /**
+     * @brief Calculates the sum of the first n natural numbers.
+     * @param n The number of natural numbers to sum.
+     * @return The natural number sum, or 0 for a non-positive count.
+     */
+    int NaturalSum(int n)
+    {
+        return (n <= 0) ? 0 : n * (n + 1) / 2;
     }
     // This is a header file for the CPlusKit library, providing a collection of mathematical utility functions. It includes functions for absolute value, minimum and maximum comparisons, clamping values, checking even/odd status, calculating factorials, checking for prime numbers, digit manipulation (splitting, summing, multiplying, reversing), and more. The functions are encapsulated within the `cpk::math` namespace to avoid naming conflicts.
 }
