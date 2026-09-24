@@ -1219,6 +1219,79 @@ namespace cpk::math
         }
         return count;
     }
+
+    int primeFactorsCount(int val)
+    {
+        std::vector<int> factors;
+        for (int i = 2; i <= val; i++)
+        {
+            while (val % i == 0)
+            {
+                factors.push_back(i);
+                val /= i;
+            }
+        }
+        return factors.size(); // Return the count of prime factors
+    }
+
+    int * primeFactors(int val)
+    {
+        std::vector<int> factors;
+        for (int i = 2; i <= val; i++)
+        {
+            while (val % i == 0)
+            {
+                factors.push_back(i);
+                val /= i;
+            }
+        }
+        int *arr = new int[factors.size()];
+        for (size_t i = 0; i < factors.size(); ++i)
+        {
+            arr[i] = factors[i];
+        }
+        return arr; // Return dynamically allocated array of prime factors
+    }
+
+    int sumPrimeFactors(int val)
+    {
+        int sum = 0;
+        for (int i = 2; i <= val; i++)
+        {
+            while (val % i == 0)
+            {
+                sum += i;
+                val /= i;
+            }
+        }
+        return sum; // Return the sum of prime factors
+    }
+
+    int largestPrimeFactor(int val)
+    {
+        int largest = -1;
+        for (int i = 2; i <= val; i++)
+        {
+            while (val % i == 0)
+            {
+                largest = i;
+                val /= i;
+            }
+        }
+        return largest; // Return the largest prime factor
+    }
+
+    int smallestPrimeFactor(int val)
+    {
+        for (int i = 2; i <= val; i++)
+        {
+            if (val % i == 0)
+            {
+                return i; // Return the smallest prime factor
+            }
+        }
+        return val; // If no factors found, return the number itself
+    }
     // This is a header file for the CPlusKit library, providing a collection of mathematical utility functions. It includes functions for absolute value, minimum and maximum comparisons, clamping values, checking even/odd status, calculating factorials, checking for prime numbers, digit manipulation (splitting, summing, multiplying, reversing), and more. The functions are encapsulated within the `cpk::math` namespace to avoid naming conflicts.
 }
 
