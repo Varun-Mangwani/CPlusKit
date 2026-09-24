@@ -752,7 +752,7 @@ namespace cpk::math
         }
         return val % 10;
     }
-    
+
     // function no. - 43
     /**
      * @brief Gets the largest digit in a number.
@@ -794,7 +794,7 @@ namespace cpk::math
         }
         return smallest;
     }
-   
+
     // function no. - 45
     /**
      * @brief Counts the even digits in a number.
@@ -1266,7 +1266,7 @@ namespace cpk::math
      * @param val The number to factor.
      * @return A dynamically allocated array of prime factors.
      */
-    int * primeFactors(int val)
+    int *primeFactors(int val)
     {
         std::vector<int> factors;
         for (int i = 2; i <= val; i++)
@@ -1685,6 +1685,7 @@ namespace cpk::math
     {
         return (n <= 0) ? 0 : n * (n + 1) / 2;
     }
+
     // This is a header file for the CPlusKit library, providing a collection of mathematical utility functions. It includes functions for absolute value, minimum and maximum comparisons, clamping values, checking even/odd status, calculating factorials, checking for prime numbers, digit manipulation (splitting, summing, multiplying, reversing), and more. The functions are encapsulated within the `cpk::math` namespace to avoid naming conflicts.
 }
 

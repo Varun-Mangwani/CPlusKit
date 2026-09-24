@@ -428,6 +428,362 @@ namespace cpk::string
         }
         return count;
     }
+
+    // function no. - 21
+    /**
+     * @brief Converts the first character of a string to uppercase.
+     * @param str The string to modify.
+     * @return A pointer to the modified string.
+     */
+    char *upperFirst(char str[])
+    {
+        int len = strl(str);
+        if (len > 0 && str[0] >= 'a' && str[0] <= 'z')
+        {
+            str[0] = str[0] - 32;
+        }
+        return str;
+    }
+
+    // function no. - 22
+    /**
+     * @brief Converts the first character of a string to lowercase.
+     * @param str The string to modify.
+     * @return A pointer to the modified string.
+     */
+    char *lowerFirst(char str[])
+    {
+        int len = strl(str);
+        if (len > 0 && str[0] >= 'A' && str[0] <= 'Z')
+        {
+            str[0] = str[0] + 32;
+        }
+        return str;
+    }
+
+    // function no. - 23
+    /**
+     * @brief Toggles the case of every letter in a string.
+     * @param str The string to modify.
+     * @return A pointer to the modified string.
+     */
+    char *toggleCase(char str[])
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] >= 'A' && str[i] <= 'Z')
+            {
+                str[i] = str[i] + 32;
+            }
+            else if (str[i] >= 'a' && str[i] <= 'z')
+            {
+                str[i] = str[i] - 32;
+            }
+        }
+        return str;
+    }
+
+
+    // function no. - 24
+    /**
+     * @brief Converts the first letter of every word to uppercase.
+     * @param str The string to modify.
+     * @return A pointer to the modified string.
+     */
+    char *upperWords(char str[])
+    {
+        int len = strl(str);
+        bool inWord = false;
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] != ' ' && !inWord)
+            {
+                inWord = true;
+                if (str[i] >= 'a' && str[i] <= 'z')
+                {
+                    str[i] = str[i] - 32;
+                }
+            }
+            else if (str[i] == ' ')
+            {
+                inWord = false;
+            }
+        }
+        return str;
+    }
+
+    // function no. - 25
+    /**
+     * @brief Converts the first letter of every word to lowercase.
+     * @param str The string to modify.
+     * @return A pointer to the modified string.
+     */
+    char * lowerWords(char str[])
+    {
+        int len = strl(str);
+        bool inWord = false;
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] != ' ' && !inWord)
+            {
+                inWord = true;
+                if (str[i] >= 'A' && str[i] <= 'Z')
+                {
+                    str[i] = str[i] + 32;
+                }
+            }
+            else if (str[i] == ' ')
+            {
+                inWord = false;
+            }
+        }
+        return str;
+    }
+
+    // function no. - 26
+    /**
+     * @brief Converts lowercase letters in a string to uppercase.
+     * @param str The string to modify.
+     * @return A pointer to the modified string.
+     */
+    char *isUpper(char str[])
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] >= 'a' && str[i] <= 'z')
+            {
+                str[i] = str[i] - 32;
+            }
+        }
+        return str;
+    }
+
+    // function no. - 27
+    /**
+     * @brief Converts uppercase letters in a string to lowercase.
+     * @param str The string to modify.
+     * @return A pointer to the modified string.
+     */
+    char *isLower(char str[])
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] >= 'A' && str[i] <= 'Z')
+            {
+                str[i] = str[i] + 32;
+            }
+        }
+        return str;
+    }
+
+    // function no. - 28
+    /**
+     * @brief Toggles the case of letters in a string.
+     * @param str The string to modify.
+     * @return A pointer to the modified string.
+     */
+    char *isMixedCase(char str[])
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] >= 'A' && str[i] <= 'Z')
+            {
+                str[i] = str[i] + 32;
+            }
+            else if (str[i] >= 'a' && str[i] <= 'z')
+            {
+                str[i] = str[i] - 32;
+            }
+        }
+        return str;
+    }
+
+    // function no. - 29
+    /**
+     * @brief Checks whether every character in a string is a digit.
+     * @param str The string to inspect.
+     * @return 1 if all characters are digits, otherwise 0.
+     */
+    int isDigit(char str[])
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] < '0' || str[i] > '9')
+            {
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+    // function no. - 30
+    /**
+     * @brief Checks whether every character in a string is a space.
+     * @param str The string to inspect.
+     * @return 1 if all characters are spaces, otherwise 0.
+     */
+    int isSpace(char str[])
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            if (str[i] != ' ')
+            {
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+    // function no. - 31
+    /**
+     * @brief Checks whether a string contains a vowel.
+     * @param str The string to inspect.
+     * @return 1 if a vowel is present, otherwise 0.
+     */
+    int isVowel(char str[])
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            char c = str[i];
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+                c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    // function no. - 32
+    /**
+     * @brief Checks whether a string contains a consonant.
+     * @param str The string to inspect.
+     * @return 1 if a consonant is present, otherwise 0.
+     */
+    int isConsonant(char str[])
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            char c = str[i];
+            if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+            {
+                if (!(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+                      c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U'))
+                {
+                    return 1;
+                }
+            }
+        }
+        return 0;
+    }
+    
+    // function no. - 33
+    /**
+     * @brief Checks whether a string contains a special character.
+     * @param str The string to inspect.
+     * @return 1 if a special character is present, otherwise 0.
+     */
+    int isSpecialchar(char str[])
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            char c = str[i];
+            if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') || c == ' '))
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    // function no. - 34
+    /**
+     * @brief Checks whether a string contains a letter.
+     * @param str The string to inspect.
+     * @return 1 if a letter is present, otherwise 0.
+     */
+    int isLetter(char str[])
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            char c = str[i];
+            if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    // function no. - 35
+    /**
+     * @brief Checks whether a string contains a numeric character.
+     * @param str The string to inspect.
+     * @return 1 if a numeric character is present, otherwise 0.
+     */
+    int isNumeric(char str[])
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            char c = str[i];
+            if (c >= '0' && c <= '9')
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    // function no. - 36
+    /**
+     * @brief Checks whether a string contains only binary digits.
+     * @param str The string to inspect.
+     * @return 1 if all characters are 0 or 1, otherwise 0.
+     */
+    int isBinary(char str[])
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            char c = str[i];
+            if (c != '0' && c != '1')
+            {
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+    // function no. - 37
+    /**
+     * @brief Checks whether a string contains only hexadecimal digits.
+     * @param str The string to inspect.
+     * @return 1 if all characters are hexadecimal digits, otherwise 0.
+     */
+    int isHexadecimal(char str[])
+    {
+        int len = strl(str);
+        for (int i = 0; i < len; i++)
+        {
+            char c = str[i];
+            if (!((c >= '0' && c <= '9') || (c >= 'A' && c <= 'F') || (c >= 'a' && c <= 'f')))
+            {
+                return 0;
+            }
+        }
+        return 1;
+    }
 //=====================================
 }
 //--------------------------------------------------------
