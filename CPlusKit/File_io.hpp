@@ -164,5 +164,45 @@ namespace cpk::io
             return 0; // Failure
         }
     }
+
+    char *strcpy(char *dest, const char *src)
+    {
+        char *ptr = dest;
+        while (*src != '\0')
+        {
+            *ptr++ = *src++;
+        }
+        *ptr = '\0'; // Null-terminate the destination string
+        return dest; // Return the destination string
+    }
+    
+    char *readLine(string filename, int lineNumber)
+    {
+        ifstream file(filename);
+        if (file.is_open())
+        {
+            string line;
+            int currentLine = 0;
+            while (getline(file, line))
+            {
+                if (currentLine == lineNumber)
+                {
+                    file.close();
+                    char *result = new char[line.length() + 1];
+                    strcpy(result, line.c_str());
+                    return result; // Return the requested line as a C-style string
+                }
+                currentLine++;
+            }
+            file.close();
+            cout << "Line number " << lineNumber << " does not exist in file: " << filename << endl;
+            return nullptr; // Return nullptr if the line number does not exist
+        }
+        else
+        {
+            cout << "Unable to open file: " << filename << endl;
+            return nullptr; // Return nullptr if the file cannot be opened
+        }
+    }
     //=======================================
 }
